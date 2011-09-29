@@ -1,4 +1,4 @@
-'''
+    '''
 Created on Sep 29, 2011
 
 @author: sebastian.treu@gmail.com
@@ -30,9 +30,10 @@ class Color(object):
         print color + s + self.no_color
 
 class Timer(multiprocessing.Process):
-    def __init__(self, count):
+    def __init__(self, count, section):
         multiprocessing.Process.__init__(self, None)
         self.count  = count
+        self.section = section
 
     def run(self):
         while(self.count > 0):
@@ -40,17 +41,15 @@ class Timer(multiprocessing.Process):
             sys.stdout.flush()
             time.sleep(1)
             self.count -= 1
-        launchDefault(None)
+        launchDefault(self.section)
 
 def launchDefault(section):
     if section is not None:
         defaultSection = section
-
     if bool(configParser.getboolean(defaultSection, "ask")):
         print "Are you sure? [y/N] "
         if re.match("[yY]|[Yy][eE][sS]\n", sys.stdin.readline()) is None:
             return
-
     cmd = configParser.get(defaultSection, "exec").split(' ')
     os.execvp(cmd[0], cmd[1:])
 
@@ -63,7 +62,7 @@ def main():
                         )
     sys.stdout.write("\nChoose a session [Default is "+str(defaultIndex)+" in   ")
     sys.stdout.flush()
-    work = Timer(timeout)
+    work = Timer(timeout, defaultSection)
     work.start()
     r, w, e = select.select([sys.stdin], [], [], timeout)
     if len(r) != 0:
