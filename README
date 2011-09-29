@@ -1,0 +1,23 @@
+pylogin
+-------
+
+A minimalist launcher used mainly for logins, but can be used for any purpouse.
+
+A ~/.pylogin file is required, format follows:
+
+[general]
+# Timeout until automatic login to the default option
+time=<seconds>
+# The name of the default section to launch when timeout
+default=<section-name>
+
+[<section-name]
+# The color for seeing the option
+color=<red|blue|yellow|no>
+# The executable
+exec=<self-explanatory>
+# The option below is optional. If ignored, it will
+# default to False.
+ask=<yes|no|true|false|on|off> 
+
+pylogin have not been tested! USE IT AT YOUR OWN RISK!
