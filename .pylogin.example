@@ -1,0 +1,17 @@
+[general]
+default=fluxbox
+time=5
+
+[fluxbox]
+color=yellow
+exec=/usr/bin/xinit startfluxbox
+
+[reboot]
+color=red
+exec=reboot
+ask=yes
+
+[shutdown]
+color=red
+exec=shutdown
+ask=yes
