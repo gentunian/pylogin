@@ -11,7 +11,7 @@ time=<seconds>
 # The name of the default section to launch when timeout
 default=<section-name>
 
-[<section-name]
+[<section-name>]
 # The color for seeing the option
 color=<red|blue|yellow|no>
 # The executable
@@ -20,4 +20,6 @@ exec=<self-explanatory>
 # default to False.
 ask=<yes|no|true|false|on|off> 
 
-pylogin have not been tested! USE IT AT YOUR OWN RISK!
+pylogin have not been tested! Still lacks for erros checking.
+
+USE IT AT YOUR OWN RISK!
