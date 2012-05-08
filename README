@@ -20,6 +20,6 @@ exec=<self-explanatory>
 # default to False.
 ask=<yes|no|true|false|on|off> 
 
-pylogin have not been tested! Still lacks for erros checking.
+pylogin have not been tested! Still lacks for error checking.
 
 USE IT AT YOUR OWN RISK!
